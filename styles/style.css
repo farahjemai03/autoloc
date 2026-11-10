@@ -4,7 +4,7 @@
   gap: 20px;
 }
 .carte { background: #fff; border-radius: 10px;
-  border-top: 6px solid #94a3b8; }
+  border-top: 6px solid #94a3b8; padding: 16px}
 
 .statut-dispo       { border-top-color: #16a34a; }
 .statut-louee       { border-top-color: #dc2626; }
@@ -16,14 +16,19 @@
 .badge-suv  { background: #2563eb; }
 .badge-luxe { background: #7c3aed; }
 .recapitulatif {
-  background: #c3b2b2;
+  background: #ffffff;
   padding: 24px;
   border-radius: 16px;
   margin-top: 32px;
   box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
 }
 
-.recapitulatif h2 { font-size: 1.4rem; color: #2a0f0f; margin-bottom: 12px; }
-.recapitulatif h3 { font-size: 1rem; color: #684769; margin: 16px 0 8px; }
+.recapitulatif h2 { font-size: 1.4rem; color: #070000; margin-bottom: 12px; }
+.recapitulatif h3 { font-size: 1rem; color: #000000; margin: 16px 0 8px; }
 .recapitulatif ul { padding-left: 20px; color: #373a34; }
 .recapitulatif li { margin-bottom: 6px; }
+body {
+  background: #e0f2fe;   /* light blue */
+  margin: 0;
+  padding: 24px;
+}

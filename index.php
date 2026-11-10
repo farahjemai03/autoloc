@@ -28,23 +28,25 @@ $disponibles = filtrerDisponibles($vehicules);
 <body>
     <h1>Flotte AutoLoc</h1>
 <!-- Liste des cartes vehicules-->
-     <div>
+     <div class="grille"> <!--"grille" puts them next to each other-->
         <?php foreach($vehicules as $v):?>
             <?php
             $badge = getBadgeCategorie($v["categorie"]);
             $libelle = getLibelleStatut($v["statut"]);
             $prix = calculerPrixLocation($v["jours"],TARIF_JOUR_BASE);
             ?>
-            <article>
+            <article class="carte statut-<?=strtolower($v["statut"])?>"><!--"carte statut" alone adds a gray line at the top of each card but strtolower turns the status into lower case so that css can read and color it-->
                 <h2><?=$v["modele"]?> (<?=$v["jours"]?> j)</h2>
-                <span><?= $badge["libelle"] ?></span>
+                <span class="badge <?=$badge["classe"]?>"> <!--classe "badge" alone colors the text white while $badge["classe"] calls each class css and colors it-->
+                    <?= $badge["libelle"] ?>
+                </span>
                 <p><strong>Statut: </strong><?=$libelle?></p>
                 <p><strong>Prix estimé: </strong><?=$prix?> TND</p>
             </article>
         <?php endforeach; ?>
      </div>
 <!-- Section récapitulatif-->
- <section>
+ <section class="recapitulatif">
     <h2>Récapitulatif</h2>
     <p>Nombre total de véhicules: <?=count($vehicules)?></p>
     <h3>Véhicules disponibles:</h3>
