@@ -44,6 +44,16 @@ $disponibles = filtrerDisponibles($vehicules);
         <?php endforeach; ?>
      </div>
 <!-- Section récapitulatif-->
- 
+ <section>
+    <h2>Récapitulatif</h2>
+    <p>Nombre total de véhicules: <?=count($vehicules)?></p>
+    <h3>Véhicules disponibles:</h3>
+    <ul>
+        <?php foreach($disponibles as $d):?>
+            <?php $b=getBadgeCategorie($d["categorie"]);?>
+            <li><?=$d["modele"]?> - <?=$b["libelle"]?></li>
+        <?php endforeach;?>
+    </ul>
+ </section>
 </body>
 </html>
